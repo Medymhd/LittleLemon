@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('restaurant/', include('restaurant.urls')), 
     path('users/', include(router.urls)),
-     path('restaurant/menu/', include('restaurant.urls')),
+    path('restaurant/menu/', include('restaurant.urls')),
     path('restaurant/booking/', include(router.urls)),
 ]
 
