@@ -26,6 +26,8 @@ router.register(r'tables', views.BookingViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace = 'rest_framework')), #api-auth route is defined to let you use the browsable API feature of DRF
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
     path('admin/', admin.site.urls),
     path('restaurant/', include('restaurant.urls')), 
     path('users/', include(router.urls)),
