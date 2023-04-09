@@ -20,7 +20,7 @@ from restaurant import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'tables', views.BookingViewSet)
+router.register(r'booking', views.BookingViewSet, basename='booking')
 
 
 urlpatterns = [
@@ -30,8 +30,9 @@ urlpatterns = [
     path('auth/', include('djoser.urls.authtoken')),
     path('admin/', admin.site.urls),
     path('restaurant/', include('restaurant.urls')), 
-    path('users/', include(router.urls)),
-    path('restaurant/booking/', include(router.urls)),
+    path('api/', include(router.urls)),
+    path('api/users/', include(router.urls)),
+    path('api/booking/', include(router.urls)),
 ]
 
 
